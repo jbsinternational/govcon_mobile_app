@@ -1,0 +1,53 @@
+<ons-page class="" ng-controller="EventController">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">{{ eventObj.time_slot }} - {{ eventObj.room }}</div>
+    </ons-toolbar>
+
+    <ons-scroller>
+        <div class="jbs-event-content">
+            <div class="center" ng-show="loadingList">
+                <ons-icon icon="spinner" size="3x" spin="true"  fixed-width="true"></ons-icon>
+                Loading...
+            </div>
+            <div>
+                <h2>{{ eventObj.title }}</h2>
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                <strong>Speakers:</strong>  {{ eventObj.speakers }}
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                {{ eventObj.body }}
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                <strong>Day:</strong> {{ eventObj.day }}
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                <strong>Expertise Level:</strong> {{ eventObj.exp_level }}
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                <strong>Room:</strong> {{ eventObj.room }}
+            </div>
+            <p>&nbsp;</p>
+
+            <div>
+                <strong>Session Track:</strong> {{ eventObj.session_track }}
+            </div>
+            <p>&nbsp;</p>
+        </div>
+    </ons-scroller>
+
+</ons-page>

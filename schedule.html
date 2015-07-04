@@ -1,0 +1,59 @@
+<ons-page class="" ng-controller="ScheduleController">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">
+            {{ scheduleTitle }}
+        </div>
+    </ons-toolbar>
+
+    <ons-scroller>
+        <ons-navigator var="scheduleNavigator">
+            <div class="center" ng-show="loadingList">
+                <ons-icon icon="spinner" size="3x" spin="true"  fixed-width="true"></ons-icon>
+                Loading...
+            </div>
+            <div  ng-repeat="time in sessionsList">
+                <ons-list-header class="jbs-time-header">{{ time.time }}</ons-list-header>
+                <ons-list-item class="plan"
+                               modifier="chevron"
+                               ng-repeat="event in time.events">
+                    <ons-row align="">
+
+                        <ons-col width="25%" class="plan-left" >
+                            <div class="jbs-room">
+                                {{ event.room }}
+                            </div>
+                            <div class="jbs-attending">
+                                <label class="checkbox checkbox--list-item">
+                                    <input type="checkbox" ng-click="checkSession(event.nid)" ng-checked="event.attending">
+                                    <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+                                    I'm attending
+                                </label>
+                            </div>
+                        </ons-col>
+
+                        <ons-col class="plan-right"
+                                 ng-click="showSession(event.nid, event.title, time.time)">
+                            <div class="jbs-title">
+                                {{ event.title }}
+                            </div>
+
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </div>
+        </ons-navigator>
+    </ons-scroller>
+
+
+</ons-page>
+
+
+
+<!--ng-style="event.counter % 2 == 0 ? {'background-color': '#eee'} : {'background-color': '#ddd'}"-->
+<!--ng-class="event.counter % 2 == 0 ? 'jbs-row-even' : 'jbs-row-odd'"-->

@@ -1,0 +1,34 @@
+.jbs-home {
+  height: 100%;
+  width: 100%;
+  background-color: #db1b2b;
+}
+
+.jbs-home img {
+  width: 100%;
+}
+
+/*.jbs-row-even {*/
+  /*background-color: #eee !important;*/
+/*}*/
+
+/*.jbs-row-odd {*/
+  /*background-color: #ddd !important;*/
+/*}*/
+
+.jbs-time-header {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+.jbs-event-content {
+  padding: 0 10px;
+}
+
+.jbs-attending label {
+  font-size: 10px;
+}
+
+.jbs-title {
+  font-weight: bolder;
+}
