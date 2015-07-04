@@ -1,4 +1,4 @@
-app.service('GlobalService', function ($location, $cookies, $cookieStore) {
+app.service('GlobalService', function ($location, $cookies) {
 
   this.errorMessage = null;
 
@@ -43,7 +43,7 @@ app.service('GlobalService', function ($location, $cookies, $cookieStore) {
   }
 
   this.getCheckedEventsCookie = function () {
-    var fromStore = $cookieStore.get("jbsGovConSchedule_CheckedEvents");
+    var fromStore = $cookies.get("jbsGovConSchedule_CheckedEvents");
     for (i in fromStore) {
       this.checkedEvents[fromStore[i]] = true;
     }
@@ -58,7 +58,7 @@ app.service('GlobalService', function ($location, $cookies, $cookieStore) {
     });
     var now = new Date(),
     exp = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 365);
-    $cookieStore.put('jbsGovConSchedule_CheckedEvents', toStore, { expires: exp });
+    $cookies.put('jbsGovConSchedule_CheckedEvents', toStore, { expires: exp });
   }
 
 });
