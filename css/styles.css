@@ -54,7 +54,8 @@ body {
 }
 
 .navigation-bar {
-  background: #85D0CB;
+  background-color: #85D0CB;
+  background-image: none;
 }
 
 .jbs-event-content {
