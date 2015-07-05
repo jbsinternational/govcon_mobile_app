@@ -32,3 +32,13 @@
 .jbs-title {
   font-weight: bolder;
 }
+
+.jbs-day-overdue {
+  color: gray;
+  font-weight: normal;
+}
+
+.jbs-not-day-overdue {
+  color: white;
+  font-weight: bolder;
+}

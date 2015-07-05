@@ -8,6 +8,16 @@ app.service('GlobalService', function ($location, $cookies) {
 
   this.attendingEvents = [];
 
+  this.isOverdueDay = function (day) {
+    var today = $moment().format('yyMMdd');
+    if (day>today) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   this.getScheduleDayPageTitle = function (day) {
 
     if (isNaN(day)) {

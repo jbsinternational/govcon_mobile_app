@@ -15,21 +15,21 @@
                         setScheduleTitle(22);
                         getScheduleList(22)">
             <ons-icon icon="fa-desktop"></ons-icon>
-            {{ getScheduleDayPageTitle(22) }}
+            <span ng-class="checkDayOverdue(22)">{{ getScheduleDayPageTitle(22) }}</span>
         </ons-list-item>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(23);
                         getScheduleList(23)">
             <ons-icon icon="fa-desktop"></ons-icon>
-            {{ getScheduleDayPageTitle(23) }}
+            <span ng-class="checkDayOverdue(23)">{{ getScheduleDayPageTitle(23) }}</span>
         </ons-list-item>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(24);
                         getScheduleList(24)">
             <ons-icon icon="fa-desktop"></ons-icon>
-            {{ getScheduleDayPageTitle(24) }}
+            <span ng-class="checkDayOverdue(24)">{{ getScheduleDayPageTitle(24) }}</span>
         </ons-list-item>
 
         <br/>
