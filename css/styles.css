@@ -49,13 +49,14 @@ body {
 */
 
 .jbs-time-header {
-/*  background-color: #000 !important;
-  color: white !important;*/
+  background-color: #000 !important;
+  color: white !important;
 }
 
 .navigation-bar {
   background-color: #85D0CB !important;
   background-image: none;
+  background-size: 100% 0;
 }
 
 .jbs-event-content {
