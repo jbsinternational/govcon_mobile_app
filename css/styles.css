@@ -28,26 +28,33 @@ body {
 }
 
 .jbs-home {
-/*  height: 100%;
-  width: 100%;*/
   background: #CE1F30;
+  min-height: 100%;
 }
 
 .jbs-home img {
   width: 100%;
 }
 
-/*.jbs-row-even {*/
-  /*background-color: #eee !important;*/
-/*}*/
+/*
+.jbs-row-even {
+  background-color: #eee !important;
+}
+*/
 
-/*.jbs-row-odd {*/
-  /*background-color: #ddd !important;*/
-/*}*/
+/*
+.jbs-row-odd {
+  background-color: #ddd !important;
+}
+*/
 
 .jbs-time-header {
   background-color: #000 !important;
   color: white !important;
+}
+
+.navigation-bar {
+  background: #85D0CB;
 }
 
 .jbs-event-content {
@@ -67,6 +74,6 @@ body {
 }
 
 .intro {
-  width: 70%;
+  width: 66.66%;
   margin: 0 auto;
 }
