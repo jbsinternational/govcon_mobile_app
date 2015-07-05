@@ -6,15 +6,21 @@
     <ons-list class="menu-list">
 
     <ons-list-header ng-click="menu.setMainPage('home.html', {closeMenu: true})">
-            <ons-icon icon="fa-home"></ons-icon>Header Text</ons-list-header>
-
+            <ons-icon icon="fa fa-home"></ons-icon>Home</ons-list-header>
+<!--
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('home.html', {closeMenu: true})">
             <ons-icon icon="fa-home"></ons-icon>
             Home
         </ons-list-item>
+-->
     </ons-list>
 
    <ons-list class="menu-list">
+
+        <ons-list-header>
+           <ons-icon icon="fa fa-calendar-o"></ons-icon>
+            Schedule
+        </ons-list-header>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(22);
