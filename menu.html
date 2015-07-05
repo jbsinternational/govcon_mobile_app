@@ -9,7 +9,10 @@
             <ons-icon icon="fa-home"></ons-icon>
             Home
         </ons-list-item>
+    </ons-list>
 
+   <ons-list class="menu-list">
+        <ons-list-header>Schedule</ons-list-header>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(22);
@@ -31,9 +34,10 @@
             <ons-icon icon="fa fa-calendar-o"></ons-icon>
             {{ getScheduleDayPageTitle(24) }}
         </ons-list-item>
+    </ons-list>
 
-        <br/>
-
+    <ons-list class="menu-list">
+    
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('attending.html', {closeMenu: true});
                         getAttending()">
             <ons-icon icon="fa fa-star"></ons-icon>
