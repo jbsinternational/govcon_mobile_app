@@ -53,7 +53,9 @@ body {
   color: white !important;
 }
 
-.navigation-bar {
+.navigation-bar__left,
+.navigation-bar__center,
+.navigation-bar__right {
   background-color: #85D0CB !important;
   background-image: none;
   background-size: 100% 0;
