@@ -23,6 +23,10 @@ body {
   font-family: 'Lato Regular', sans-serif;
 }
 
+.page__content {
+  top: 0 !important;
+}
+
 .jbs-home {
 /*  height: 100%;
   width: 100%;*/
