@@ -6,40 +6,36 @@
     <ons-list class="menu-list">
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('home.html', {closeMenu: true})">
-            <ons-icon icon="fa-home"></ons-icon>
+            <ons-icon icon="fa fa-home"></ons-icon>
             Home
         </ons-list-item>
-
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(22);
                         getScheduleList(22)">
-            <ons-icon icon="fa-desktop"></ons-icon>
+            <ons-icon icon="fa fa-calendar-o"></ons-icon>
             {{ getScheduleDayPageTitle(22) }}
         </ons-list-item>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(23);
                         getScheduleList(23)">
-            <ons-icon icon="fa-desktop"></ons-icon>
+            <ons-icon icon="fa fa-calendar-o"></ons-icon>
             {{ getScheduleDayPageTitle(23) }}
         </ons-list-item>
 
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('schedule.html', {closeMenu: true});
                         setScheduleTitle(24);
                         getScheduleList(24)">
-            <ons-icon icon="fa-desktop"></ons-icon>
+            <ons-icon icon="fa fa-calendar-o"></ons-icon>
             {{ getScheduleDayPageTitle(24) }}
         </ons-list-item>
 
-        <br/>
-
         <ons-list-item class="menu-item" ng-click="menu.setMainPage('attending.html', {closeMenu: true});
                         getAttending()">
-            <ons-icon icon="fa-desktop"></ons-icon>
+            <ons-icon icon="fa fa-star"></ons-icon>
             My Schedule
         </ons-list-item>
-
 
     </ons-list>
 

@@ -1,24 +1,64 @@
+@font-face {
+  font-family: 'LatoLight';
+  src: url('../fonts/Lato-Light.ttf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LatoRegular';
+  src: url('../fonts/Lato-Regular.ttf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LatoBold';
+  src: url('../fonts/Lato-Bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'LatoRegular', sans-serif;
+}
+
+.page__content {
+  top: 0 !important;
+}
+
 .jbs-home {
-  height: 100%;
-  width: 100%;
-  background-color: #db1b2b;
+  background: #CE1F30;
+  min-height: 100%;
 }
 
 .jbs-home img {
   width: 100%;
 }
 
-/*.jbs-row-even {*/
-  /*background-color: #eee !important;*/
-/*}*/
+/*
+.jbs-row-even {
+  background-color: #eee !important;
+}
+*/
 
-/*.jbs-row-odd {*/
-  /*background-color: #ddd !important;*/
-/*}*/
+/*
+.jbs-row-odd {
+  background-color: #ddd !important;
+}
+*/
 
 .jbs-time-header {
   background-color: #000 !important;
   color: white !important;
+}
+
+.onsen-sliding-menu__main .navigation-bar__left,
+.onsen-sliding-menu__main .navigation-bar__center,
+.onsen-sliding-menu__main .navigation-bar__right {
+  background-color: #85D0CB !important;
+  background-image: none;
+  background-size: 100% 0;
 }
 
 .jbs-event-content {
@@ -35,4 +75,12 @@
 
 .page-title {
   font-weight: bold;
+<<<<<<< HEAD
+=======
+}
+
+.intro {
+  width: 66.66%;
+  margin: 0 auto;
+>>>>>>> gh-pages
 }
