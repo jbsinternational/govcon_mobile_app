@@ -1,64 +1,24 @@
-@font-face {
-  font-family: 'LatoLight';
-  src: url('../fonts/Lato-Light.ttf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'LatoRegular';
-  src: url('../fonts/Lato-Regular.ttf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'LatoBold';
-  src: url('../fonts/Lato-Bold.ttf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-body {
-  font-family: 'LatoRegular', sans-serif;
-}
-
-.page__content {
-  top: 0 !important;
-}
-
 .jbs-home {
-  background: #CE1F30;
-  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: #ce1f30;
 }
 
 .jbs-home img {
   width: 100%;
 }
 
-/*
-.jbs-row-even {
-  background-color: #eee !important;
-}
-*/
+/*.jbs-row-even {*/
+  /*background-color: #eee !important;*/
+/*}*/
 
-/*
-.jbs-row-odd {
-  background-color: #ddd !important;
-}
-*/
+/*.jbs-row-odd {*/
+  /*background-color: #ddd !important;*/
+/*}*/
 
 .jbs-time-header {
   background-color: #000 !important;
   color: white !important;
-}
-
-.onsen-sliding-menu__main .navigation-bar__left,
-.onsen-sliding-menu__main .navigation-bar__center,
-.onsen-sliding-menu__main .navigation-bar__right {
-  background-color: #85D0CB !important;
-  background-image: none;
-  background-size: 100% 0;
 }
 
 .jbs-event-content {
@@ -73,14 +33,51 @@ body {
   font-weight: bolder;
 }
 
-.page-title {
-  font-weight: bold;
-<<<<<<< HEAD
-=======
+.jbs-day-overdue {
+  color: gray;
+  font-weight: normal;
 }
 
-.intro {
-  width: 66.66%;
-  margin: 0 auto;
->>>>>>> gh-pages
+.jbs-not-day-overdue {
+  color: white;
+  font-weight: bolder;
+}
+
+.jbs-home-wrapper .page__background {
+  background-color: #85d0cb;
+}
+
+.jbs-content-wrapper {
+  padding: 0 20px;
+}
+
+.jbs-brand {
+  color: #960019;
+  font-weight: bolder;;
+}
+
+.jbs-terms-and-conditions h2 {
+  color: #960019;
+  margin: 0.3em 0 0.5em;
+}
+
+.jbs-terms-and-conditions h3 {
+  color: #960019;
+  margin-top: 0;
+}
+
+.jbs-terms-and-conditions h4 {
+  color: #960019;
+}
+
+.jbs-terms-and-conditions li {
+  padding-bottom: 0.7em;
+}
+
+.jbs-terms-and-conditions ol, ul {
+  padding: 0 0.7em 0 40px;
+}
+
+.jbs-terms-and-conditions ol {
+  margin: 1em;
 }

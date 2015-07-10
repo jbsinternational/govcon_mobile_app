@@ -77,4 +77,16 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
     GlobalService.setCheckedEventsCookie();
   }
 
+  $scope.checkDayOverdue = function (day) {
+    var menuDay =  new Date('2015-07-' + day).getTime();
+    //var now =  new Date('2015-07-24').getTime();
+    var now = Date.now();
+    if (menuDay<now) {
+      return 'jbs-day-overdue'
+    }
+    else {
+      return 'jbs-not-day-overdue'
+    }
+  }
+
 });
