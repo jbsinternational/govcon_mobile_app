@@ -18,7 +18,7 @@
                 Loading...
             </div>
             <div  ng-repeat="time in sessionsList">
-                <ons-list-header class="jbs-time-header">{{ time.time }}</ons-list-header>
+                <ons-list-header ng-class="checkEventOverdue(time.time)">{{ time.time }}</ons-list-header>
                 <ons-list-item class="plan"
                                modifier="chevron"
                                ng-repeat="event in time.events">

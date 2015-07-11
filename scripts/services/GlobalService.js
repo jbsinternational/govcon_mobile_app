@@ -2,11 +2,18 @@ app.service('GlobalService', function ($location, $cookies) {
 
   this.errorMessage = null;
 
+  this.scheduleDay = null;
+
   this.eventNid = null;
 
   this.checkedEvents = [];
 
   this.attendingEvents = [];
+
+  this.getNow = function () {
+    return new Date('2015-07-23T11:30').getTime();
+    //return Date.now();
+  }
 
   this.getScheduleDayPageTitle = function (day) {
 

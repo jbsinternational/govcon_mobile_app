@@ -48,6 +48,7 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
 
   $scope.getScheduleList = function (day) {
     $scope.sessionsList = [];
+    GlobalService.scheduleDay = day;
     var index = day - 22;
     if (sessionsAllLists[index].length == 0) {
       $scope.loadingList = true;
@@ -77,15 +78,17 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
     GlobalService.setCheckedEventsCookie();
   }
 
-  $scope.checkDayOverdue = function (day) {
-    var menuDay =  new Date('2015-07-' + day).getTime();
-    //var now =  new Date('2015-07-24').getTime();
-    var now = Date.now();
-    if (menuDay<now) {
-      return 'jbs-day-overdue'
+  $scope.checkDayOverdue = function (scheduleDay) {
+    var now = new Date(GlobalService.getNow());
+    var day = now.getDate();
+    if (day > scheduleDay) {
+      return 'jbs-day-overdue';
+    }
+    else if (day < scheduleDay) {
+      return 'jbs-not-day-overdue';
     }
     else {
-      return 'jbs-not-day-overdue'
+      return 'jbs-day-occurring';
     }
   }
 

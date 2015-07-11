@@ -34,13 +34,33 @@
 }
 
 .jbs-day-overdue {
-  color: gray;
-  font-weight: normal;
+  color: gray !important;
+  font-weight: normal !important;
 }
 
 .jbs-not-day-overdue {
-  color: white;
-  font-weight: bolder;
+  color: white !important;
+  font-weight: bolder !important;
+}
+
+.jbs-day-occurring {
+  color: yellow !important;
+  font-weight: bolder !important;
+}
+
+.jbs-event-not-overdue {
+  color: white !important;
+  font-weight: bolder !important;
+}
+
+.jbs-event-overdue {
+  color: grey !important;
+  font-weight: normal !important;
+}
+
+.jbs-event-occurring {
+  color: yellow !important;
+  font-weight: bolder !important;
 }
 
 .jbs-home-wrapper .page__background {
@@ -81,3 +101,4 @@
 .jbs-terms-and-conditions ol {
   margin: 1em;
 }
+
