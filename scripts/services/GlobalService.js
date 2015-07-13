@@ -1,5 +1,14 @@
 app.service('GlobalService', function ($location, $cookies) {
 
+  var generateID = function () {
+    var result = '';
+    for (var i = 0; i<64; i++) {
+      var x = Math.floor((Math.random() * 26) + 97);
+      result = result + String.fromCharCode(x);
+    }
+    return result;
+  }
+
   this.errorMessage = null;
 
   this.scheduleDay = null;
@@ -66,6 +75,20 @@ app.service('GlobalService', function ($location, $cookies) {
     var now = new Date(),
     exp = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 365);
     $cookies.put('jbsGovConSchedule_CheckedEvents', toStore, { expires: exp });
+  }
+
+  this.checkUniqueID = function () {
+    var uniqueID =  $cookies.get("jbsGovConSchedule_UniqueId");
+    if (!uniqueID) {
+      uniqueID = generateID();
+      var now = new Date();
+      var exp = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 365);
+      $cookies.put('jbsGovConSchedule_UniqueId', uniqueID, { expires: exp });
+      return uniqueID;
+    }
+    else {
+      return false;
+    }
   }
 
 });

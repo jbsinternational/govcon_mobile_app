@@ -1,7 +1,12 @@
 'use strict';
-app.controller('MainController', function ($scope, DayScheduleFactory, GlobalService) {
+app.controller('MainController', function ($scope, DayScheduleFactory, GlobalService, RegisterAppFactory) {
 
-  GlobalService.getCheckedEventsCookie();
+  var checkUniqueID = function() {
+    var newUniqueID = GlobalService.checkUniqueID();
+    if (newUniqueID) {
+      RegisterAppFactory(newUniqueID, 'generic');
+    }
+  }
 
   var sessionsAllLists = [];
   sessionsAllLists[0] = [];
@@ -91,5 +96,8 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
       return 'jbs-day-occurring';
     }
   }
+
+  GlobalService.getCheckedEventsCookie();
+  checkUniqueID();
 
 });
