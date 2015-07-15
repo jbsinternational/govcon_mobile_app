@@ -17,8 +17,11 @@
                 <ons-icon icon="spinner" size="3x" spin="true"  fixed-width="true"></ons-icon>
                 Loading...
             </div>
+            <div ng-show="errorMessage">
+                {{ errorMessage }}
+            </div>
             <div  ng-repeat="time in sessionsList">
-                <ons-list-header class="jbs-time-header">{{ time.time }}</ons-list-header>
+                <ons-list-header ng-class="checkEventOverdue(time.time)">{{ time.time }}</ons-list-header>
                 <ons-list-item class="plan"
                                modifier="chevron"
                                ng-repeat="event in time.events">
@@ -28,13 +31,13 @@
                             <div class="jbs-room">
                                 {{ event.room }}
                             </div>
-                            <div class="jbs-attending">
-                                <label class="checkbox checkbox--list-item">
-                                    <input type="checkbox" ng-click="checkSession(event.nid)" ng-checked="event.attending">
-                                    <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-                                    I'm attending
-                                </label>
-                            </div>
+                            <!--<div class="jbs-attending">-->
+                                <!--<label class="checkbox checkbox--list-item">-->
+                                    <!--<input type="checkbox" ng-click="checkSession(event.nid)" ng-checked="event.attending">-->
+                                    <!--<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>-->
+                                    <!--I'm attending-->
+                                <!--</label>-->
+                            <!--</div>-->
                         </ons-col>
 
                         <ons-col class="plan-right"

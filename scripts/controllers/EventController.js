@@ -8,7 +8,7 @@ app.controller('EventController', function ($scope, GlobalService, EventFactory)
     $scope.loadingList = true;
     EventFactory(GlobalService.eventNid)
       .then(function (response) {
-        $scope.eventObj = response.nodes[0].node;
+        $scope.eventObj = response;
         $scope.loadingList = false;
         var a = 1;
       }, function (response) {

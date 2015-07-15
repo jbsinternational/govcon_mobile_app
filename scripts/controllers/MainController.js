@@ -1,7 +1,12 @@
 'use strict';
-app.controller('MainController', function ($scope, DayScheduleFactory, GlobalService) {
+app.controller('MainController', function ($scope, DayScheduleFactory, GlobalService, RegisterAppFactory) {
 
-  GlobalService.getCheckedEventsCookie();
+  var checkUniqueID = function() {
+    var newUniqueID = GlobalService.checkUniqueID();
+    if (newUniqueID) {
+      RegisterAppFactory(newUniqueID, 'generic');
+    }
+  }
 
   var sessionsAllLists = [];
   sessionsAllLists[0] = [];
@@ -32,6 +37,8 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
     return agragatedList;
   }
 
+  $scope.errorMessage = null;
+
   $scope.sessionsList = null;
 
   $scope.scheduleTitle = null;
@@ -48,6 +55,7 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
 
   $scope.getScheduleList = function (day) {
     $scope.sessionsList = [];
+    GlobalService.scheduleDay = day;
     var index = day - 22;
     if (sessionsAllLists[index].length == 0) {
       $scope.loadingList = true;
@@ -56,8 +64,9 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
           sessionsAllLists[index] = aggregateTheList(response.nodes);
           $scope.sessionsList = sessionsAllLists[index];
           $scope.loadingList = false;
+          $scope.errorMessage = null;
         }, function (response) {
-          $scope.errorMessage = response.Message;
+          $scope.errorMessage = 'Error: ' + response.Message;
           $scope.loadingList = false;
         });
     }
@@ -76,5 +85,22 @@ app.controller('MainController', function ($scope, DayScheduleFactory, GlobalSer
     GlobalService.checkedEvents[nid] = !GlobalService.checkedEvents[nid];
     GlobalService.setCheckedEventsCookie();
   }
+
+  $scope.checkDayOverdue = function (scheduleDay) {
+    var now = new Date(GlobalService.getNow());
+    var day = now.getDate();
+    if (day > scheduleDay) {
+      return 'jbs-day-overdue';
+    }
+    else if (day < scheduleDay) {
+      return 'jbs-not-day-overdue';
+    }
+    else {
+      return 'jbs-day-occurring';
+    }
+  }
+
+  GlobalService.getCheckedEventsCookie();
+  checkUniqueID();
 
 });
